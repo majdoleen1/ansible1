@@ -8,12 +8,7 @@
     apt:
       upgrade: 'True'
       update_cache: yes
-      
-  - name: Update ubuntu repos
-    apt:
-      name: 'git'
-      state: present
-      
+
   - name: "Clone a PUBLIC repo"
     ansible.builtin.git:
         repo: https://github.com/majdoleen1/bootcamp-app.git
@@ -54,12 +49,13 @@
       path: /{{ mydir }}/
       state: present
 
-  - name: Install Npm pm2 Module
-    npm:
-      name: pm2
-      path: /{{ mydir }}/
-      state: present
-      global: yes
+ # - name: Install Npm pm2 Module
+      npm:
+        name: pm2
+        path: /{{ mydir }}/
+        state: present
+        global:
+          yes
 
   - name: Initialize Tables in DB
     shell:

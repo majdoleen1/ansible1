@@ -1,0 +1,39 @@
+trigger:
+- master
+
+variables:
+- group: ansible
+
+stages:
+
+
+- stage: CI
+  pool: Default
+  jobs:
+  - job: publish_artifact
+    steps:
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(Pipeline.Workspace)'
+        artifactType: 'pipeline'
+        artifactName: 'drop'
+    
+    - download: current
+      artifact: drop
+   
+    - publish: $(Build.ArtifactStagingDirectory)
+      displayName: publish artifact
+      artifact: WebApp
+      
+- stage: CD_staging
+  jobs:
+  - deployment: staging
+    displayName: staging
+    environment: 'staging.stg-ansibleVM'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            hosts:
+              - 10.0.1.6
+              - 10.0.1.5
