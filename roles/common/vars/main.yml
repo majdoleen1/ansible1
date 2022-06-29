@@ -1,0 +1,15 @@
+---
+# host_url configuration
+ HOST_URL: http://20.124.19.107:8080
+
+# Okta configuration
+ PGHOST: "psql-db-staging.postgres.database.azure.com"
+ PGUSERNAME: "postgres"
+ PGDATABASE: "postgres"
+ PGPASSWORD: "p@ssw0rd42"
+ PGPORT: 5432
+
+ # Okta configuration
+ OKTA_ORG_URL: "https://dev-45480442.okta.com"
+ OKTA_CLIENT_ID: "0oa5ly040grrmMt2K5d7"
+ OKTA_CLIENT_SECRET: "t_VyJv3GuViBKr7M40z9u7HgS0zms-v8xOUatLAQ"
