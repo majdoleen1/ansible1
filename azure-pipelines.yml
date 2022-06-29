@@ -1,9 +1,6 @@
 trigger:
 - master
 
-variables:
-- group: ansible
-
 stages:
 
 
