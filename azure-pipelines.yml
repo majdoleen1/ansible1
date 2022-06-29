@@ -26,6 +26,3 @@ stages:
   - deployment: staging
     displayName: staging
     environment: 'staging.vm-staging'
-    strategy:
-      runOnce:
-        deploy:
