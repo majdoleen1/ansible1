@@ -21,3 +21,12 @@ stages:
     - publish: $(Build.ArtifactStagingDirectory)
       displayName: publish artifact
       artifact: WebApp
+- stage: CD_staging
+  jobs:
+  - deployment: staging
+    displayName: staging
+    environment: 'staging.vm-staging'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
