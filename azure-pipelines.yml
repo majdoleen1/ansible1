@@ -29,4 +29,3 @@ stages:
     strategy:
       runOnce:
         deploy:
-          steps:
