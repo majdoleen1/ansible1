@@ -33,6 +33,3 @@ stages:
     strategy:
       runOnce:
         deploy:
-          hosts:
-            - 10.0.1.6
-            - 10.0.1.5
